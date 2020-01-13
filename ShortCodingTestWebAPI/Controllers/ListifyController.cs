@@ -67,51 +67,51 @@ namespace ShortCodingTestWebAPI.Controllers
 
         public int Count => Math.Abs(End - Start);
 
-        public bool IsReadOnly => throw new NotImplementedException();
+        public bool IsReadOnly => false;
 
         public void Add(int item)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public bool Contains(int item)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public void CopyTo(int[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public IEnumerator<int> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return oIEnumerable.GetEnumerator();
         }
 
         public int IndexOf(int item)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public void Insert(int index, int item)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public bool Remove(int item)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
