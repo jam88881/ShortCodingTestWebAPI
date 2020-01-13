@@ -63,7 +63,7 @@ namespace ShortCodingTestWebAPI.Controllers
 
         readonly IList<int> _list = new List<int>();
 
-        public int this[int index] { get => oIEnumerable.ElementAt<int>(index); set => throw new NotImplementedException(); }
+        public int this[int index] { get { return oIEnumerable.ElementAt<int>(index); } set { return; } }
 
         public int Count => Math.Abs(End - Start);
 
