@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +26,20 @@ namespace ShortCodingTestWebAPI.Controllers
         // GET listify/listify/3/10/1
         public string Get(int start, int end, int index)
         {
-            var list = new ListifyController(start, end);
-            var val1 = list[index];
-            return val1.ToString();
+            try
+            {
+                var list = new ListifyController(start, end);
+                var val1 = list[index];
+                return val1.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return index + " is not between " + start.ToString() + " and " + (start + end).ToString();
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
         }
 
         // POST api/values
@@ -76,11 +87,20 @@ namespace ShortCodingTestWebAPI.Controllers
 
         public void Clear()
         {
+
             return;
         }
 
         public bool Contains(int item)
         {
+            IEnumerator oIEnumnerator = oIEnumerable.GetEnumerator();
+            while (oIEnumnerator.MoveNext())
+            {
+                if (oIEnumnerator.Current.ToString() == item.ToString())
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
