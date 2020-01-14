@@ -34,7 +34,7 @@ namespace ShortCodingTestWebAPI.Controllers
             }
             catch (ArgumentOutOfRangeException)
             {
-                return index + " is not between " + start.ToString() + " and " + (start + end).ToString();
+                return (index + start).ToString() + " is not between " + start.ToString() + " and " + (start + end).ToString();
             }
             catch (Exception ex)
             {
