@@ -17,7 +17,7 @@ namespace ShortCodingTestWebAPI.Controllers
         // GET listify/listify
         public IEnumerable<string> Get()
         {
-            var list = new ListifyController(100, 200);
+            var list = new ListifyController(Start, End);
             var val1 = list[50];
             var val2 = list[51];
             return new string[] { val1.ToString(), val2.ToString() };
